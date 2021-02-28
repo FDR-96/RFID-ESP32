@@ -1,3 +1,11 @@
+/*
+*    Simple card reader for Adichip. 
+*    
+*    Program version: 1.5.1
+*    Copyright © 2021 FDR-96
+*    Copyright © 2021 ADICHIP
+*/
+
 #include <Wire.h>
 #include <SPI.h>
 #include <Adafruit_PN532.h>
@@ -6,22 +14,22 @@
 #define PN532_MOSI (14) 
 #define PN532_SS   (33)  
 #define PN532_MISO (27)
-
 #define PN532_IRQ   (26)
-#define PN532_RESET (25)  
+#define PN532_RESET (25)
+  
 #include <time.h>
 #include <WiFi.h>
 #include <FirebaseESP32.h>
 
-#define WIFI_SSID "ADICHIP Wifi Zone"
-#define WIFI_PASSWORD "38389454285"
+#define WIFI_SSID ""
+#define WIFI_PASSWORD ""
 
-#define FIREBASE_HOST "adichip-b6505-default-rtdb.firebaseio.com"
+#define FIREBASE_HOST ""
 
 /** The database secret is obsoleted, please use other authentication methods, 
  * see examples in the Authentications folder. 
 */
-#define FIREBASE_AUTH "k4HF8Vm27UCr7J8pkHECamb9H71KRnIdheaUhsfS"
+#define FIREBASE_AUTH ""
 
 //Define FirebaseESP32 data object
 FirebaseData fbdo;
@@ -118,9 +126,9 @@ void loop() {
         digitalWrite(PIN_BOB, LOW);
     }
    variableFinal = "";
-    //Consultamos si se encuentra registrado
+    //We check if it is registered.
 
-  //Leemos el estado en el que se encuentra nuestra bandera en FB DB Realtime
+  //We read the state our flag is in in FB DB Realtime.
      
   } 
   
